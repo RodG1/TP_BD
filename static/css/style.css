@@ -1,0 +1,1345 @@
+:root {
+    --bg-color: black;
+    --primary-color: #d1d1d1;
+    --secondary-color: #e63946;
+    --third-color: #f1faee;
+    --accent-color: #a8dadc;
+    --bg-input-color: #2a9d8f;
+}
+
+html {
+    font-size: 14px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-width: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    background-size: cover; 
+    /*background-repeat: no-repeat*/; 
+    background-position: center; 
+    background-image: url("/static/imagenes/banner-bg.jpg");
+    background-color: rgba(255, 255, 255, 0.76);
+    background-blend-mode: overlay;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Si queremos conservar esta etiqueta, habría que definirla como una clase. Si se descomenta influye en Bio y Prensa.
+En Prensa no haría falta. Si la quieren en bio, definir como clase y aplicar a esa parte. (Flor) */
+/* body {
+    background-color: #3bb2b8;
+    background: linear-gradient(25deg,
+            rgba(66, 230, 149, 1),
+            rgba(66, 32, 149, 1));
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: "Open Sans", sans-serif;
+} */
+
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #000000;
+}
+
+h4,
+h5,
+p,
+a {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+div,
+h2,
+p,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*/ section {
+    margin: 5px, 0, 10px, 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+@keyframes tilt-n-move-shaking {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(5px, 5px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-5px, 5px) rotate(-5deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.header {
+    display: flex;
+    background-color: var(--bg-color);
+    width: 100%;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.navbar {
+    background-color: transparent;
+    width: 100%;
+    place-content: center;
+    overflow: hidden;
+}
+
+.nav-links {
+    text-decoration: none;
+}
+
+.nav-links ul {
+    margin-right: 0;
+    color: var(--primary-color);
+    list-style-type: none;
+    text-align: right;
+    background-color: transparent;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    border-right: 1px solid var(--third-color);
+}
+
+.nav-links li a {
+    text-decoration: none;
+    display: block;
+    color: var(--primary-color);
+    padding: 8px;
+    padding: 14px 16px;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transform: scale(1.25);
+}
+
+.nav-links li:hover {
+    color: var(--secondary-color);
+}
+
+
+.flexbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;;
+}
+
+.main {
+    flex: 70%;
+    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.fakeimg {
+    padding-top: 10px;
+    background-color: var(--bg-color);
+    width: 100%;
+    z-index: 9999;
+    height: fit-content;
+}
+
+.container-btn {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    vertical-align: center;
+}
+
+.btn-contacto {
+    background-color: rgba(255, 255, 255, 0.856);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: large;
+}
+
+.container-btn a{
+    color: rgb(0, 0, 0);
+}
+
+.btn-contacto a{
+    color: black;
+    text-decoration: solid;
+}
+
+.btn-contacto:hover{
+    transform: scale(1.05);
+}
+
+.container-btn:hover{
+    transform: scale(1.05);
+}
+
+/* Estilo para la tarjeta del banner */
+.container-nombre {
+    color: var(--third-color);
+    margin: 5px auto;
+    text-align: center;
+    padding: 2 160px;
+    max-width: 1200px;
+}
+
+.container-nombre h1 {
+    font-size: 4vw;
+    margin-top: 30px;
+}
+
+.container-nombre h2 {
+    margin-bottom: 20px;
+}
+
+.container-nombre h3 {
+    margin-bottom: 20px;
+}
+
+/* CLASES PARA LA BIOGRAFIA*/
+.bio-box,
+.bio-artist div {
+    display: flow-root;
+    margin: 1rem 4rem;
+    padding: 2rem;
+}
+
+.bio-artist h2,
+.bio-obra h3 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.bio-artist p,
+.bio-obra p {
+    font-size: 1.65rem;
+    margin-bottom: 1rem;
+}
+
+.bio-obra {
+    flex-direction: column;
+}
+
+.bio-obra h2 {
+    text-align: center;
+    font-size: 5rem;
+    padding: 0 0 1.5rem 0;
+}
+
+.bio-obra img,
+.b-imgRight {
+    float: right;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 0 1.25rem 2.5rem;
+}
+
+.b-imgLeft {
+    float: left;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 1.25rem 0.25rem 0;
+}
+
+/* estilo de imagen de bio */
+.bio img {
+    width: 17%;
+    border: 3px solid #f1e7e7;
+    border-radius: 50%;
+}
+
+/*Grid para mostrar imagenes de osky realizando sus obras*/
+.bio-obras {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+    grid-template-areas:
+        'b-img1 b-img2 b-img2 b-img2'
+        'b-img1 b-img3 b-img3 b-img4'
+        'b-img1 b-img5 b-img6 b-img6';
+    grid-gap: 2rem;
+    padding: 2rem 5rem;
+    max-width: 200vh;
+}
+
+.bio-obras .b-img1 {
+    grid-area: b-img1;
+}
+
+.bio-obras .b-img2 {
+    grid-area: b-img2;
+}
+
+.bio-obras .b-img3 {
+    grid-area: b-img3;
+}
+
+.bio-obras .b-img4 {
+    grid-area: b-img4;
+}
+
+.bio-obras .b-img5 {
+    grid-area: b-img5;
+}
+
+.bio-obras .b-img6 {
+    grid-area: b-img6;
+}
+
+.bio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+}
+
+/*BIOFRAFIA - boton para llevar al portfolio  */
+.bio-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.bio-btn a:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 0.25rem solid var(--accent-color);
+}
+
+.bio-btn a {
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border: 0.25rem solid var(--accent-color);
+}
+
+/* Contenedor principal de la prensa. */
+.container-prensa {
+    display: flex;
+    flex-wrap: nowrap;
+    /* justify-content: center; */
+    max-width: 700px;
+    margin-block: 2rem;
+    gap: 2rem;
+}
+
+.container-prensa img {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* estilo de la carta de noticias indidividual */
+.card {
+    display: flex;
+    margin-left: 1%;
+    margin-right: 1%;
+    flex-direction: column;
+    width: clamp(10rem, calc(30% + 2vw), 22rem);
+    overflow: hidden;
+    box-shadow: 0.16px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    background: linear-gradient(to right, #686262, #ECE9E6);
+}
+.card__header iframe{
+
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+
+}
+.card__header img{
+
+    left:0;
+    top:0;
+    height:135%;
+    width:100%;
+    padding-bottom: 20%;
+
+}
+
+/* estilo body de la card */
+.card__body {
+
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+
+}
+
+
+.card__body h4 {
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.card__footer {
+    display: flex;
+    padding: 16px;
+    margin-top: auto;
+}
+
+.user {
+    display: flex;
+    gap: 8px;
+}
+
+.user__image {
+    border-radius: 50%;
+}
+
+.user__info>small {
+    color: #666;
+}
+
+
+/* ---------- CSS PARA PRENSA.HTML ---------- */
+
+
+.header-p2 {
+    color: white;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.header-p2 h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.main-prensa {
+    margin: 0 auto;
+    max-width: 1040px;
+    padding: 10px;
+}
+
+.columna-prensa {
+    flex: 1;
+    flex-direction: column;
+}
+
+.article-p {
+    background: lightgray;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    color: #666;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-basis: auto;
+    margin: 10px;
+}
+
+.article-p:hover {
+    box-shadow: 0 10px 20px var(--primary-color), 0 10px 10px var(--third-color);
+    color: var(--bg-color);
+}
+
+.article-image-p {
+    background: #eee;
+    display: block;
+    padding-top: 75%;
+    position: relative;
+    width: 100%;
+}
+
+.article-image-p img {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.article-image-p,
+.img1 {
+    padding-top: 66.6666%;
+}
+
+.article-image-p,
+.img2 {
+    padding-top: 56.25%;
+}
+
+.article-body-p {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.article-title-p {
+    color: #333;
+    flex-shrink: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.article-content-p {
+    flex: 1;
+    margin-top: 5px;
+    padding-bottom: 10px;
+}
+
+.article-content-video {
+    flex: 1;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.article-info-p {
+    display: flex;
+    font-size: 0.85em;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.video-container2,
+.contacto-container,
+.video-iframe {
+    max-width: 1200px;
+    padding: 20px;
+    padding-bottom: 50px;
+    margin: 12px auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.video-iframe {
+    background-color: lightslategray;
+    color:#333;
+}
+
+.contacto-prensa {
+    display: flex;
+    margin: auto;
+    padding: 20px;
+}
+
+#header img {
+    height: 20px;
+    width: auto;
+    border-radius: 50%;
+}
+
+#logo img {
+    padding: 5px;
+    display: flex;
+    border-radius: 50%;
+    height: 60px;
+    cursor: pointer;
+}
+
+#logo:hover {
+    animation: tilt-n-move-shaking 0.5s infinite;
+}
+
+#nombre {
+    display: flex;
+    background-image: url('../img/BannerFirma.jpeg');
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    height: 250px;
+    box-shadow: inset 0 0 0 2000px rgba(34, 34, 34, 0.5);
+    margin: 50px, 0, 50px, 0;
+    justify-content: center;
+}
+
+.bio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#sobre-mi {
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    font-size: 20px;
+}
+
+/* caja principla del portfolio con su estilo */
+#portfolio {
+    display: flex;
+    max-width: 100vw;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    /* background: linear-gradient(rgba(37, 39, 41, 0.8), rgba(15, 14, 15, 0.8)); */
+}
+
+/* formato de imagenes del portfolio */
+#lista-portfolio img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    padding: 6px;
+}
+
+/* animacion del mouse sobre imagen de la galeria hover */
+#lista-portfolio img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(1.05);
+    transform: rotate(-1.2deg)scale(1.05);
+    transition: 0.6s ease-out;
+    filter: grayscale(0.9);
+}
+
+/* caja priciopa de lista de prensa */
+#lista-prensa {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Defino la vista de las cartillas de noticias */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* caja prinicipal de contacto */
+#contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+
+}
+#contacto ul{
+    background-color:transparent;
+    padding-bottom: 20px;
+    list-style-type: none;
+}
+
+#contacto li{
+    margin:20px;
+    padding: 10;
+    font-size: medium;
+}
+#contacto img {
+    width: 180px;
+    border-radius: 70%;
+}
+
+#contacto p {
+    font-size: larger;
+}
+
+@media (max-width: 700px) {
+
+    .row,
+    .navbar {
+        flex-direction: column;
+        /*Cambio de horizontal a vertical en ambas clases*/
+    }
+}
+
+/*Estilos Contacto ----- */
+/* Caja entera */
+#form-wrapper {
+    text-align: center;
+    background-color: #000000;
+    color: rgb(0, 0, 0);
+    text-decoration: solid;
+    font-size: 20px;
+    padding: 10px 10px;
+
+}
+
+/* Cada titulo de elemento */
+.tituloContacto {
+    outline: none;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 0px 20px;
+    width: 30%;
+    background-color: #f0f0f0d3;
+    border-radius: 20px;
+}
+
+/* fondo de la caja */
+#cajaContacto {
+    background-image: url(/static/img/Contacto/1.jpg),
+        url(/static/img/Contacto/2.jpg,),
+        url(/static/img/Contacto/3.jpg,),
+        url(/static/img/Contacto/4.jpg,);
+    border-radius: 2000px;
+    border-color: #0baa98;
+}
+
+/* ESTILOS PAGINA PORTFOLIO (LEO) */
+/* INICIO */
+/* Flex general de toda la galeria completa */
+.flexbox-container-galeria {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+padding-top: 20%;
+    background-color: black;
+    /* border: 3px solid rgb(187, 27, 94); */
+    padding-top: 20px;
+    justify-content: center;
+}
+
+#banner-galeria {
+    background-color: var(--bg-input-color);
+    border: 4px solid rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    justify-content: center;
+    background-image: url('../img/Galeria/BannerInicio-VER1.png');
+    background-size: contain;
+    height: 400px;
+    width: 700px;
+}
+
+#banner-galeria h1 {
+    font-size: 400%;
+    text-align: center;
+    text-shadow: 4px 4px 5px #0005;
+}
+
+/* Estilo de subtitulos que separan las categorias "murales" cuadros otros */
+.banner-subtitulos {
+    max-width: 100%;
+    /* width: 100%; hace que aparezca la barra para desplazarse de forma horizontal */
+    flex-wrap: wrap;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: xx-large;
+    background-image: url("..//img/Galeria/fondo-ceramico-negro.jpg");
+    text-align: center;
+    text-shadow: 4px 4px 5px #0005;
+}
+
+.flexbox-container-galeria h2 {
+    text-align: center;
+    font-size: 200%;
+}
+
+.container-categorias {
+    width: 100%;
+    /*  border: 4px solid rgb(50, 165, 218);
+   /* padding: 5px 5px 5px 5px;    */
+}
+
+.list-imagen-obra {
+    gap: 8px;
+    padding: 16px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilo de la caja que contiene foto  */
+.marco-imagen-obra {
+    padding: 5px 5px 15px 5px;
+    /* border: 1px solid rgb(171, 241, 5); */
+    margin: 5px;
+}
+
+.titulo-obra {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #666;
+    width: 98%;
+    padding: 2px;
+    font-size: 16px;
+    box-shadow: 5px 5px #aeb0bd44;
+}
+
+/* Estilo del texto en la descripcion foto  */
+.descripcion-murales {
+    display: flex;
+    width: 98%;
+    flex-direction: column;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 12px;
+    background-color: whitesmoke;
+    /* border-radius: 50%; */
+    padding: 5px 5px 5px 5px;
+    margin-top: 3px;
+    color: #0f0f0f;
+    text-align: center;
+    box-shadow: 5px 5px #aeb0bd44;
+}
+
+.marco-imagen-obra img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-right: 5px;
+    box-shadow: 5px 5px #aeb0bd44;
+}
+
+.marco-imagen-obra img:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transform: scale(1.05);
+    transform: rotate(-1.2deg)scale(1.05);
+    transition: 0.6s ease-out;
+    filter: grayscale(0.9);
+
+}
+
+.container {
+    max-width: 800px;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.lightbox-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lightbox-gallery div>img {
+    max-width: 100%;
+    display: block;
+}
+
+.lightbox-gallery div {
+    margin: 10px;
+    flex-basis: 180px;
+}
+
+@media only screen and (max-width: 480px) {
+    .lightbox-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lightbox>div {
+        margin-bottom: 10px;
+    }
+}
+
+.container {
+    max-width: 800px;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.text-center {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.lightbox-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lightbox-gallery div>img {
+    max-width: 100%;
+    display: block;
+}
+
+.lightbox-gallery div {
+    margin: 10px;
+    flex-basis: 180px;
+}
+
+@media only screen and (max-width: 480px) {
+    .lightbox-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lightbox>div {
+        margin-bottom: 10px;
+    }
+}
+
+/*Lighbox CSS*/
+
+.lightbox {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+
+.lightbox img {
+    display: block;
+    margin: auto;
+}
+
+.lightbox .caption {
+    margin: 15px auto;
+    width: 50%;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #eee;
+}
+
+.github-link {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.github-link:hover,
+.github-link:active,
+.github-link:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer {
+    /* background-color: var(--bg-input-color); */
+    background: linear-gradient(#6e7174cc, rgba(53, 60, 87, 0.8));
+    display: flex;
+    height: 200px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;  
+    text-align: center;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-top: 20px;
+    object-position: center;
+}
+
+.footer p {
+    color: var(--primary-color);
+    font-style: italic;
+    font-size: 14px;
+    margin:10px;
+}
+
+.footer a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: var(--secondary-color);
+}
+
+.social {
+    display: flex;
+    font-size: 15px;
+    margin: 20px;
+}
+
+.social li {
+    padding: 0 10px;
+}
+
+/* Media Queries generales para que sea responsive */
+
+/* Pantallas pequeñas(celulares) */
+@media screen and (max-width: 767px) {
+    
+    h1{
+        font-size: 1vw;
+    }
+    
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3,
+    p {
+        font-size: 5vw;
+    }
+
+    .navbar a:not(:first-child) {
+        display: none;
+    }
+
+    #banner {
+        height: 300px;
+    }
+
+    .flexbox-container {
+        max-width: 420px;
+    }
+
+    .container-nombre {
+        padding: 0px 50px;
+    }
+
+    .btn-contacto {
+        font-size: 1vh;
+    }
+
+    /*CLASES PARA LA BIOGRAFIA*/
+    .bio-box,
+    .bio-artist div {
+        padding: 0;
+        margin: 0.25rem 2rem;
+    }
+    .bio-artist h2,
+    .bio-obra h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .bio-artist p,
+    .bio-obra p {
+        font-size: 0.9rem;
+    }
+    .bio-obra img,
+    .b-imgRight {
+        max-width: 350px;
+        margin: 0 1.25rem 1.25rem 1rem;
+    }
+    .bio-obra h2 {
+        font-size: 2.5rem;
+    }
+    .b-imgLeft {
+        max-width: 350px;
+        margin: 0 1rem 1.25rem 0;
+    }
+
+    /* BIOFRAFIA - boton para llevar al portfolio   */
+    .bio-btn a {
+        font-size: 1rem;
+    }
+
+    /* Grid para mostrar imagenes de osky realizando sus obras */
+    .bio-obras {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px 300px 300px;
+        grid-template-areas:
+            'b-img3 b-img3'
+            'b-img2 b-img1'
+            'b-img4 b-img5'
+            'b-img6 b-img5';
+        grid-gap: 1rem;
+        padding: 1rem 2.5rem;
+        max-width: 100vh;
+    }
+
+    /* caja prinicipal de contacto  */
+    #contacto img {
+        width: 80px;
+    }
+    #contacto p {
+        font-size: 1rem;
+    }
+    /* Estilo de subtitulos que separan las categorias "murales" cuadros otros  */
+    .banner-subtitulos {
+        font-size: large;
+    }
+
+    /* CLASES PARA EL FOOTER */
+    .footer{
+        height: auto;
+    }
+    .footer a {
+        font-size: 14px;
+    }
+    .footer ul{
+        padding: 0;
+    }
+    .footer p{
+        margin: 0;
+        padding: 0.5rem;
+    }
+    .social {
+        display: block;
+    }
+    #footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #footer a {
+        padding: 2px 0px;
+    }
+}
+
+/* Pantallas medianas(tablets) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1{
+        font-size: 1vw;
+    }
+    
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3,
+    p {
+        font-size: 2.8vw;
+    }
+
+
+    #banner {
+        height: 400px;
+    }
+
+    /* .flexbox-container {
+        max-width: 720px;
+    } */
+
+    .container-nombre {
+        padding: 0px 75px;
+    }
+
+    .columnas-prensa,
+    .columna-prensa {
+        display: flex;
+    }
+
+    .primer-article {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .article-body-p {
+        flex: 1;
+    }
+
+    .primer-article .article-image-p {
+        height: 300px;
+        order: 2;
+        padding-top: 0;
+        width: 400px;
+    }
+
+    .main-columna {
+        flex: 3;
+    }
+
+    .nested {
+        flex: 2;
+    }
+
+    #portfolio,
+    #footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* CLASES PARA LA BIOGRAFIA */
+    .bio-box,
+    .bio-artist div {
+        padding: 0;
+        margin: 2rem;
+    }
+
+    .bio-artist h2,
+    .bio-obra h3 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .bio-artist p,
+    .bio-obra p {
+        font-size: 1.15rem;
+    }
+
+    .bio-obra img,
+    .b-imgRight {
+        margin: 1.25rem;
+    }
+
+    .bio-obra h2 {
+        font-size: 3.5rem;
+    }
+
+    /* BIOFRAFIA - boton para llevar al portfolio  */
+    .bio-btn a {
+        font-size: 1.5rem;
+    }
+    /* Grid para mostrar imagenes de osky realizando sus obras */
+    .bio-obras {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 400px 400px 400px 400px;
+        grid-template-areas:
+            'b-img3 b-img3'
+            'b-img2 b-img1'
+            'b-img4 b-img5'
+            'b-img6 b-img5';
+        grid-gap: 1rem;
+        padding: 1rem 2.5rem;
+        
+    }
+}
+
+
+/* Pantallas grandes 
+@media screen and (min-width: 1920px) {
+    h1{
+        font-size: 1vw;
+    }
+    
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3,
+    p {
+        font-size: 5vw;
+    }
+
+}*/
+
+
+/*Estilos Administrador de inventario*/
+.contenedor-centrado {
+    display:flex;
+    width: 110%;
+    justify-content: center;
+    border-radius: 40px;
+}
+
+.logo-centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 12px;
+    border-radius: 130px;
+    border-color: #000000
+}
+table {
+    max-width: 90%;
+    margin:  auto;
+    padding: 20px;
+    background-color: #2d5b86;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(247, 247, 247, 0.5);
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #2d5b86;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px rgba(235, 20, 20, 0.5);
+    text-decoration:solid;
+    color: #ffffff;
+    font-size: 20px;
+}
+img{
+    border-radius: 20px;
+    border: #000000;
+}
+
+thead{
+    text-decoration: underline;
+}
+
+th{
+    background-color: #ffffff77;
+    border-radius: 3px;
+}
+
+td{
+    background-color: #a0a0a071;
+}
+
+.btn-Eliminar{
+    color: black;
+    background-color: red;
+    border-radius: 5px;
+    height: 30px;
+    text-decoration: solid double;
+}
